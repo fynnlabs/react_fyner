@@ -6,8 +6,10 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "bootstrap-icons": "^1.11.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -15,7 +17,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch:scss_navigation": "node-sass -w src/components/navigation/navigation.scss src/components/navigation/navigation.css",
+    "watch:scss_index": "node-sass -w src/index.scss src/index.css",
+    "watch:scss_footer": "node-sass -w src/components/footer/footer.scss src/components/footer/footer.css",
+    "watch:scss_aboutUs": "node-sass -w src/pages/aboutUs/aboutUs.scss src/pages/aboutUs/aboutUs.css",
+    "watch:scss_home": "node-sass -w src/pages/home/home.scss src/pages/home/home.css",
+    "watch:scss_order": "node-sass -w src/pages/order/order.scss src/pages/order/order.css",
+    "watch:scss_products": "node-sass -w src/pages/products/products.scss src/pages/products/products.css"
   },
   "eslintConfig": {
     "extends": [

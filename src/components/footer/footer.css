@@ -1,0 +1,31 @@
+.footer__wrapper {
+  margin-top: auto;
+  width: 100%; }
+  .footer__wrapper .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    gap: 8px;
+    left: 0;
+    bottom: 0;
+    height: fit-content;
+    background-color: #c7a46c;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 80px;
+    padding: 16px 0; }
+    .footer__wrapper .footer .infos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px; }
+      .footer__wrapper .footer .infos .link__info {
+        text-decoration: none;
+        color: #040516;
+        border-bottom: 1px dotted #040516; }
+    .footer__wrapper .footer .link__restaurant {
+      text-decoration: none;
+      color: #040516;
+      border-bottom: 1px dotted #040516;
+      margin: 0 auto; }
