@@ -35,26 +35,6 @@
       font-size: 40px;
       color: $neutralWhite;
     }
-
-    .main__btn{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      padding: 8px 16px;
-      gap: 16px;
-
-      .all__btn{
-        display: flex;
-        align-items: center;
-        border-radius: 6px;
-        height: 24px;
-        width: fit-content;
-        padding: 8px;
-        color: $primaryGold;
-        box-shadow: -1px -1px 4px $primaryGold, 1px 1px 4px $neutralBrown;
-      }
-    }
   }
 
   .products{
@@ -63,18 +43,6 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-  }
-}
-
-.content__wrapper {
-  .header__wrapper {
-    .main__btn {
-      .all__btn:hover{
-        color: $neutralWhite;
-        background-color: $primaryGold;
-        cursor: pointer;
-      }
-    }
   }
 }
 
@@ -105,7 +73,7 @@
   font-weight: 700;
   letter-spacing: 1.5px;
   padding-top: 10px;
-  color: $neutralWhite;
+  color: $primaryGold;
 
 }
 
@@ -177,15 +145,6 @@
 
       .header{
         font-size: 56px;
-      }
-
-      .main__btn{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        gap: 16px;
       }
     }
   }

@@ -1,5 +1,5 @@
 import './navigation.css'
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Link, NavLink} from "react-router-dom";
 
 
@@ -14,6 +14,7 @@ export default function Navigation() {
     const aboutUsLabel = 'About us'
     const nameLabel = "Fyner"
     const hamburgerLength = [1,2,3]
+    const [ifScrolled, setIfScrolled] = useState('')
 
     // useEffects
     /**
@@ -26,9 +27,19 @@ export default function Navigation() {
         setIsNavOpen((prev) => !prev)
     }
 
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+                if (window.scrollY < 15) {
+                    setIfScrolled('');
+                } else {
+                    setIfScrolled('nav__background');
+                }
+            });
+        }, [])
+
 
     return (
-        <div className="nav__wrapper" id="navigation">
+        <div className={`nav__wrapper ${ifScrolled}`} id="navigation">
             <nav className="navigation">
                 <Link className="navigation__logo" to="/home">
                     {nameLabel}

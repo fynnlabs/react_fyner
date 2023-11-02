@@ -6,7 +6,7 @@ const Home = () => {
         <div className="content__wrapper">
         <div className="content">
             <div className="image__background">
-                <a className="cta__btn" href="pages/menu/menu.html">
+                <a className="cta__btn" href="">
                     View Products
                 </a>
             </div>

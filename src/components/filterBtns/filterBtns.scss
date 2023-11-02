@@ -1,0 +1,39 @@
+@import "variables";
+
+
+.main__btn{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 8px 16px;
+  gap: 16px;
+
+  .all__btn{
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    height: 24px;
+    width: fit-content;
+    padding: 8px;
+    color: $primaryGold;
+    box-shadow: -1px -1px 4px $primaryGold, 1px 1px 4px $neutralBrown;
+  }
+
+  .all__btn:hover{
+    color: $neutralWhite;
+    background-color: $primaryGold;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .main__btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    gap: 16px;
+  }
+}

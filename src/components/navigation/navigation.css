@@ -6,7 +6,7 @@
 .nav__wrapper {
   display: flex;
   justify-content: center;
-  background-color: #040516;
+  background-color: transparent;
   position: fixed;
   width: 100%;
   z-index: 2;

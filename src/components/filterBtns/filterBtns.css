@@ -1,0 +1,29 @@
+.main__btn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 8px 16px;
+  gap: 16px; }
+  .main__btn .all__btn {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    height: 24px;
+    width: fit-content;
+    padding: 8px;
+    color: #c7a46c;
+    box-shadow: -1px -1px 4px #c7a46c, 1px 1px 4px #77603e; }
+  .main__btn .all__btn:hover {
+    color: #e6e6e6;
+    background-color: #c7a46c;
+    cursor: pointer; }
+
+@media only screen and (min-width: 1500px) {
+  .main__btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    gap: 16px; } }
