@@ -9,13 +9,25 @@ const Order = () => {
     const shoppingCartHeadline = "Warenkorb";
     const orderBtnText = "Jetzt Bestellen";
     const [itemsInCart, setItemsInCart] = useState(0);
+    const shoppingCartPlaceholder = "Noch keine Einträge im Warenkorb"
+    let shoppingCartItems = [];
+    let cartItems = []
+    let clonedProduct
 
     const showShoppingCart = () => {
         setShowcart(!showCart);
     }
 
-    const increaseCartCount = () => {
+    const increaseCartCount = (product) => {
         setItemsInCart(itemsInCart + 1);
+
+        cartItems = shoppingCartItems.find(item => item.id === product.id);
+        if (cartItems) {
+            cartItems.quantity +=1
+        } else {
+            clonedProduct = {...product, quantity: 1};
+            shoppingCartItems.push(clonedProduct);
+        }
     }
 
     return (
@@ -36,6 +48,7 @@ const Order = () => {
             <section className={showCart ? "shoppingCartPop" : ""} id="shoppingCartPop">
                 <div className="shoppingCartPop__header">{showCart ? shoppingCartHeadline : ""}</div>
                 <div className="shoppingCartPop__content" id="shoppingCartPopContent">
+                    {itemsInCart === 0 && shoppingCartItems.length === 0 ? shoppingCartPlaceholder : null}
                 </div>
                 <div className="shoppingCartPop__orderBtn" id="shoppingCartPopOrderBtn">{showCart ? orderBtnText : ""}</div>
             </section>
