@@ -26,7 +26,8 @@
     "watch:scss_aboutUs": "node-sass -w src/pages/aboutUs/aboutUs.scss src/pages/aboutUs/aboutUs.css",
     "watch:scss_home": "node-sass -w src/pages/home/home.scss src/pages/home/home.css",
     "watch:scss_order": "node-sass -w src/pages/order/order.scss src/pages/order/order.css",
-    "watch:scss_products": "node-sass -w src/pages/products/products.scss src/pages/products/products.css"
+    "watch:scss_products": "node-sass -w src/pages/products/products.scss src/pages/products/products.css",
+    "watch:scss_items": "node-sass -w src/components/items/items.scss src/components/items/items.css"
   },
   "eslintConfig": {
     "extends": [
