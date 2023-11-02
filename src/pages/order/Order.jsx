@@ -1,14 +1,21 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import FilterBtns from "../../components/filterBtns/FilterBtns";
-import "./order.css"
+import "./order.css";
 import Items from "../../components/items/Items";
 
 const Order = () => {
-    const [showCart, setShowcart] = useState(false)
-    const headline = "Order"
+    const [showCart, setShowcart] = useState(false);
+    const headline = "Order";
+    const shoppingCartHeadline = "Warenkorb";
+    const orderBtnText = "Jetzt Bestellen";
+    const [itemsInCart, setItemsInCart] = useState(0);
 
     const showShoppingCart = () => {
-        setShowcart(!showCart)
+        setShowcart(!showCart);
+    }
+
+    const increaseCartCount = () => {
+        setItemsInCart(itemsInCart + 1);
     }
 
     return (
@@ -21,16 +28,16 @@ const Order = () => {
                     <div className="underline"></div>
                     <FilterBtns />
                 </div>
-            <Items />
-            <div className="shoppingCart" id="shoppingCart" onClick={showShoppingCart}>
-                Warenkorb (0)
-            </div>
+                <Items increaseCartCount={increaseCartCount} /> {/* Pass addToCart as a prop */}
+                <div className="shoppingCart" id="shoppingCart" onClick={showShoppingCart}>
+                    {`Warenkorb (${itemsInCart})`}
+                </div>
             <div className={showCart ? "blend__background" : ""} id="backgroundPop" onClick={showShoppingCart}></div>
             <section className={showCart ? "shoppingCartPop" : ""} id="shoppingCartPop">
-                <div className="shoppingCartPop__header">Warenkorb</div>
+                <div className="shoppingCartPop__header">{showCart ? shoppingCartHeadline : ""}</div>
                 <div className="shoppingCartPop__content" id="shoppingCartPopContent">
                 </div>
-                <div className="shoppingCartPop__orderBtn" id="shoppingCartPopOrderBtn">Jetzt Bestellen</div>
+                <div className="shoppingCartPop__orderBtn" id="shoppingCartPopOrderBtn">{showCart ? orderBtnText : ""}</div>
             </section>
         </div>
             </div>
