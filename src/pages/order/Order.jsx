@@ -5,6 +5,7 @@ import "./order.css"
 
 const Order = () => {
     const [dataArray, setDataArray] = useState([]); // Initialize as an empty array
+    const [showCart, setShowcart] = useState(false)
     const headline = "Order"
 
     useEffect(() => {
@@ -18,6 +19,10 @@ const Order = () => {
         } catch (error) {
             console.error('Error fetching data:', error);
         }
+    }
+
+    const showShoppingCart = () => {
+        setShowcart(!showCart)
     }
 
     return (
@@ -49,11 +54,11 @@ const Order = () => {
                     ))}
                 </div>
             </div>
-            <div className="shoppingCart" id="shoppingCart">
+            <div className="shoppingCart" id="shoppingCart" onClick={showShoppingCart}>
                 Warenkorb (0)
             </div>
-            <div className="blend__background" id="backgroundPop"></div>
-            <section className="shoppingCartPop" id="shoppingCartPop">
+            <div className={showCart ? "blend__background" : ""} id="backgroundPop" onClick={showShoppingCart}></div>
+            <section className={showCart ? "shoppingCartPop" : ""} id="shoppingCartPop">
                 <div className="shoppingCartPop__header">Warenkorb</div>
                 <div className="shoppingCartPop__content" id="shoppingCartPopContent">
                 </div>

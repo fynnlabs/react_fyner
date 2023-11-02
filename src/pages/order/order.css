@@ -16,7 +16,6 @@
   font-weight: 700; }
 
 .content__wrapper .blend__background {
-  visibility: hidden;
   top: 0;
   left: 0;
   right: 0;
@@ -35,7 +34,6 @@
   background-color: #c7a46c;
   width: 91vw;
   height: fit-content;
-  visibility: hidden;
   z-index: 5;
   border-radius: 8px;
   color: #e6e6e6; }

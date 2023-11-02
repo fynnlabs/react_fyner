@@ -21,7 +21,6 @@
   }
 
   .blend__background {
-    visibility: hidden;
     top: 0;
     left: 0;
     right: 0;
@@ -40,10 +39,10 @@
     background-color: $primaryGold;
     width: 91vw;
     height: fit-content;
-    visibility: hidden;
     z-index: 5;
     border-radius: 8px;
     color: $neutralWhite;
+
 
     .shoppingCartPop__header {
       display: flex;
