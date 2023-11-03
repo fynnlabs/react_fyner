@@ -1,23 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import axios from "axios";
+import React, { useEffect } from 'react';
 import './items.css';
 
-const Items = ({ increaseCartCount }) => { // Receive addToCart as a prop
-    const [dataArray, setDataArray] = useState([]);
+const Items = ({ addItemToCart, renderProducts, dataArray }) => { // Receive addToCart as a prop
     const plus = "+";
 
     useEffect(() => {
-        renderProducts();
+        renderProducts('https://dummyjson.com/products');
     }, []);
 
-    const renderProducts = async () => {
-        try {
-            const result = await axios.get('https://dummyjson.com/products');
-            setDataArray(result.data.products);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    }
 
     return (
         <div className="products__wrapper">
@@ -33,7 +23,7 @@ const Items = ({ increaseCartCount }) => { // Receive addToCart as a prop
                         <img src={product.thumbnail} alt="" className="left__image" />
                         <div className="pricePlusWrapper">
                             <div className="price price__color">{`$${product.price}`}</div>
-                            <div className="plus" onClick={() => increaseCartCount()}> {plus}</div> {/* Call addToCart when the plus button is clicked */}
+                            <div className="plus" onClick={() => addItemToCart(dataArray)}> {plus}</div> {/* Call addToCart when the plus button is clicked */}
                         </div>
                     </div>
                 ))}
