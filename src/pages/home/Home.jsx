@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import './home.css'
+import {Link} from "react-router-dom";
 
 const Home = () => {
 
@@ -11,9 +12,9 @@ const Home = () => {
         <div className="content__wrapper">
         <div className="content">
             <div className="image__background">
-                <a className="cta__btn" href="">
+                <Link className="cta__btn" to="/products">
                     View Products
-                </a>
+                </Link>
             </div>
             <div className="catchy__text">
                 Welcome to the Fyner!

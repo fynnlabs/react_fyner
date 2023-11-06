@@ -41,7 +41,7 @@ export default function Navigation() {
     return (
         <div className={isNavOpen ? 'nav__wrapper nav__background' : `nav__wrapper ${ifScrolled}`} id="navigation">
             <nav className="navigation">
-                <Link className="navigation__logo" to="/home">
+                <Link className="navigation__logo" to="/">
                     {nameLabel}
                 </Link>
                 <div className="navigation__links" onClick={toggleNavigation}>
