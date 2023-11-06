@@ -8,10 +8,10 @@ const Products = () => {
     const headline = "Our Products"
 
     useEffect(() => {
-        renderProducts();
+        loadProducts();
     }, []);
 
-    const renderProducts = async () => {
+    const loadProducts = async () => {
         try {
             const result = await axios.get('https://dummyjson.com/products');
             setDataArray(result.data.products); // Set the state to the 'products' array

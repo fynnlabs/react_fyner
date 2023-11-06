@@ -1,15 +1,14 @@
 import React from 'react';
 import "./filterBtns.css"
 
-const FilterBtns = ({ clonedDataArray, filteredProducts, setFilteredProducts,renderProducts }) => {
+const FilterBtns = ({clonedDataArray, setDataArray }) => {
     const filterBtns = ["All", "Smartphones", "Laptops", "Fragrances", "Skincare", "Groceries", "Home-Decoration"];
 
     //filters the products
     const filterBtnClick = (category) => {
         let categoryCompare = category.toLowerCase();
-        categoryCompare === 'all' ? setFilteredProducts(clonedDataArray) : setFilteredProducts(clonedDataArray.filter(product => product.category === categoryCompare));
-
-        renderProducts(filteredProducts);
+        categoryCompare === 'all' ? setDataArray(clonedDataArray) : setDataArray(clonedDataArray.filter(product => product.category === categoryCompare));
+        window.scrollTo(0, 0)
     }
 
     return (

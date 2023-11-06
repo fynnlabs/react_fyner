@@ -1,13 +1,7 @@
-import React, { useEffect } from 'react';
 import './items.css';
 
-const Items = ({ addItemToCart, renderProducts, dataArray }) => { // Receive addToCart as a prop
+const Items = ({ addItemToCart, dataArray }) => { // Receive addToCart as a prop
     const plus = "+";
-
-    useEffect(() => {
-        renderProducts('https://dummyjson.com/products');
-    }, []);
-
 
     return (
         <div className="products__wrapper">
