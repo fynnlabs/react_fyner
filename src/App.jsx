@@ -9,7 +9,7 @@ import About from "./pages/aboutUs/About";
 
 const App = () => {
     return (
-        <div id="root">
+        <>
             <Navigation />
             <Routes>
                 <Route index element={<Home />} />
@@ -18,7 +18,7 @@ const App = () => {
                 <Route path="about" element={<About />} />
             </Routes>
             <Footer />
-        </div>
+        </>
     );
 };
 

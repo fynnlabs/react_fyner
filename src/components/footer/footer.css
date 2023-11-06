@@ -8,7 +8,7 @@
     position: relative;
     gap: 8px;
     left: 0;
-    bottom: 0;
+    bottom: -20px;
     height: fit-content;
     background-color: #c7a46c;
     text-align: center;
