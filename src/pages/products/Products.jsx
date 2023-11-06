@@ -9,12 +9,13 @@ const Products = () => {
     const headline = "Our Products"
 
     useEffect(() => {
-        loadProducts('https://dummyjson.com/products');
+        loadProducts();
+        window.scrollTo(0 ,0)
     }, []);
 
-    const loadProducts = async (data) => {
+    const loadProducts = async () => {
         try {
-            const result = await axios.get(data);
+            const result = await axios.get('https://dummyjson.com/products');
             setDataArray(result.data.products);
             setClonedDataArray(result.data.products);
         } catch (error) {

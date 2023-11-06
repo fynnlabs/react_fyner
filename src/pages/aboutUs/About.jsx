@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import "./aboutUs.css"
 
 const About = () => {
     const storeFront = require('../../assets/images/storeFront.png')
     const productImg = require('../../assets/images/iPhone.png')
 
+    useEffect(() => {
+        window.scrollTo(0 ,0)
+    }, []);
+    
     return (
         <div>
             <div className="content__wrapper">

@@ -9,14 +9,15 @@ const Order = () => {
     const [itemsInCart, setItemsInCart] = useState(0);
     const [dataArray, setDataArray] = useState([]);
     const [clonedDataArray, setClonedDataArray] = useState([])
+    const [shoppingCartItems, setShoppingCartItems]  = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0)
     const headline = "Order";
     const shoppingCartHeadline = "Warenkorb";
     const orderBtnText = "Jetzt Bestellen";
     const shoppingCartPlaceholder = "Noch keine Einträge im Warenkorb"
+    const totalText = "Summe:"
+    let totalPriceCalculate = 0
 
-    let shoppingCartItems = [];
-    let cartItems = []
-    let clonedProduct
 
     //toggles the shoppingCart
     const showShoppingCart = () => {
@@ -26,16 +27,26 @@ const Order = () => {
     //adds items to shoppingCart
     const addItemToCart = (product) => {
         setItemsInCart(itemsInCart + 1);
-        cartItems = shoppingCartItems.find(item => item.id === product.id);
-        if (cartItems) {
-            cartItems.quantity +=1
+        const existingItemIndex = shoppingCartItems.findIndex((item) => item.id === product.id);
+
+        if (existingItemIndex !== -1) {
+            const updatedItems = [...shoppingCartItems];
+            updatedItems[existingItemIndex].quantity += 1;
+            setShoppingCartItems(updatedItems);
         } else {
-            clonedProduct = {...product, quantity: 1};
-            shoppingCartItems.push(clonedProduct);
+            const newItem = {...product, quantity: 1};
+            setShoppingCartItems([...shoppingCartItems, newItem]);
         }
+
+        for (const item of shoppingCartItems){
+            totalPriceCalculate += item.price * item.quantity
+        }
+
+        setTotalPrice(totalPriceCalculate)
     }
 
-    //loads the products
+
+        //loads the products
     const loadProducts = async () => {
             try {
                 const result = await axios.get('https://dummyjson.com/products');
@@ -46,8 +57,15 @@ const Order = () => {
             }
     }
 
+    const order = () => {
+        setShoppingCartItems([])
+        setItemsInCart(0)
+        alert("Bestellung wurde aufgenommen")
+    }
+
     useEffect(() => {
         loadProducts();
+        window.scrollTo(0 ,0)
     }, []);
 
     return (
@@ -68,15 +86,21 @@ const Order = () => {
             <section className={showCart ? "shoppingCartPop" : ""} id="shoppingCartPop">
                 <div className="shoppingCartPop__header">{showCart ? shoppingCartHeadline : ""}</div>
                 <div className="shoppingCartPop__content" id="shoppingCartPopContent">
-                    {itemsInCart === 0 && shoppingCartItems.length === 0 && showCart ? shoppingCartPlaceholder : shoppingCartItems.map((product) => (
+                    {itemsInCart === 0 && shoppingCartItems.length === 0 && showCart ? shoppingCartPlaceholder : (shoppingCartItems.map((product) => (
                         <div className="shoppingCartItem__wrapper" key={product.id}>
-                            <div className="shoppingCartItem__name">{product.title} {product.quantity}</div>
-                            <div className="shoppingCartItem__price">{product.price * product.quantity}</div>
+                            <div className="shoppingCartItem__name">{product.title} ({product.quantity})</div>
+                            <div className="shoppingCartItem__price">{(product.price * product.quantity).toFixed(2)}</div>
                         </div>
-                    ))
+                    )))
                     }
+                    {itemsInCart === 0 && shoppingCartItems.length === 0 && showCart ? null:
+                        <div className="total__wrapper">
+                            <div className="total__text">{totalText}</div>
+                            <div className="total__price">{totalPrice.toFixed(2)}</div>
+                        </div>
+                }
                 </div>
-                <div className="shoppingCartPop__orderBtn" id="shoppingCartPopOrderBtn">{showCart ? orderBtnText : ""}</div>
+                <div className={itemsInCart === 0 ? "shoppingCartPop__orderBtnInactive" :"shoppingCartPop__orderBtnActive"} id="shoppingCartPopOrderBtn" onClick={order}>{showCart ? orderBtnText : ""}</div>
             </section>
         </div>
             </div>

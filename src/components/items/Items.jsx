@@ -17,7 +17,7 @@ const Items = ({ addItemToCart, dataArray }) => { // Receive addToCart as a prop
                         <img src={product.thumbnail} alt="" className="left__image" />
                         <div className="pricePlusWrapper">
                             <div className="price price__color">{`$${product.price}`}</div>
-                            <div className="plus" onClick={() => addItemToCart(dataArray)}> {plus}</div> {/* Call addToCart when the plus button is clicked */}
+                            <div className="plus" onClick={() => addItemToCart(product)}> {plus}</div> {/* Call addToCart when the plus button is clicked */}
                         </div>
                     </div>
                 ))}
