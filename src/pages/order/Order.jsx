@@ -86,18 +86,18 @@ const Order = () => {
             <section className={showCart ? "shoppingCartPop" : ""} id="shoppingCartPop">
                 <div className="shoppingCartPop__header">{showCart ? shoppingCartHeadline : ""}</div>
                 <div className="shoppingCartPop__content" id="shoppingCartPopContent">
-                    {itemsInCart === 0 && shoppingCartItems.length === 0 && showCart ? shoppingCartPlaceholder : (shoppingCartItems.map((product) => (
+                    {itemsInCart === 0 && shoppingCartItems.length === 0 && showCart ? shoppingCartPlaceholder : showCart ? shoppingCartItems.map((product) => (
                         <div className="shoppingCartItem__wrapper" key={product.id}>
                             <div className="shoppingCartItem__name">{product.title} ({product.quantity})</div>
                             <div className="shoppingCartItem__price">{(product.price * product.quantity).toFixed(2)}</div>
                         </div>
-                    )))
+                    )) : null
                     }
-                    {itemsInCart === 0 && shoppingCartItems.length === 0 && showCart ? null:
+                    {itemsInCart === 0 && shoppingCartItems.length === 0 && showCart ? null: showCart ?
                         <div className="total__wrapper">
                             <div className="total__text">{totalText}</div>
                             <div className="total__price">{totalPrice.toFixed(2)}</div>
-                        </div>
+                        </div> : null
                 }
                 </div>
                 <div className={itemsInCart === 0 ? "shoppingCartPop__orderBtnInactive" :"shoppingCartPop__orderBtnActive"} id="shoppingCartPopOrderBtn" onClick={order}>{showCart ? orderBtnText : ""}</div>
