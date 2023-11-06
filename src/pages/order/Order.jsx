@@ -59,10 +59,9 @@ const Order = () => {
             }
     }
 
-    const order = () => {
+    const orderBtnClick = () => {
         setShoppingCartItems([])
         setItemsInCart(0)
-        alert("Bestellung wurde aufgenommen")
     }
 
 
@@ -91,21 +90,21 @@ const Order = () => {
             <section className={showCart || isItDesktop ? "shoppingCartPop" : ""} id="shoppingCartPop">
                 <div className="shoppingCartPop__header">{showCart || isItDesktop? shoppingCartHeadline : ""}</div>
                 <div className="shoppingCartPop__content" id="shoppingCartPopContent">
-                    {itemsInCart === 0 && shoppingCartItems.length === 0 && (showCart || isItDesktop) ? shoppingCartPlaceholder : showCart ? shoppingCartItems.map((product) => (
+                    {itemsInCart === 0 && shoppingCartItems.length === 0 && (showCart || isItDesktop) ? shoppingCartPlaceholder : (showCart || isItDesktop) ? shoppingCartItems.map((product) => (
                         <div className="shoppingCartItem__wrapper" key={product.id}>
                             <div className="shoppingCartItem__name">{product.title} ({product.quantity})</div>
                             <div className="shoppingCartItem__price">{(product.price * product.quantity).toFixed(2)}</div>
                         </div>
                     )) : null
                     }
-                    {itemsInCart === 0 && shoppingCartItems.length === 0 && showCart ? null: showCart ?
+                    {itemsInCart === 0 && shoppingCartItems.length === 0 && (showCart || isItDesktop)  ? null: (showCart || isItDesktop) ?
                         <div className="total__wrapper">
                             <div className="total__text">{totalText}</div>
                             <div className="total__price">{totalPrice.toFixed(2)}</div>
                         </div> : null
                 }
                 </div>
-                <div className={itemsInCart === 0 ? "shoppingCartPop__orderBtnInactive" :"shoppingCartPop__orderBtnActive"} id="shoppingCartPopOrderBtn" onClick={order}>{showCart || isItDesktop? orderBtnText : ""}</div>
+                <div className={itemsInCart === 0 ? "shoppingCartPop__orderBtnInactive" :"shoppingCartPop__orderBtnActive"} id="shoppingCartPopOrderBtn" onClick={itemsInCart === 0 ? null :orderBtnClick}>{showCart || isItDesktop? orderBtnText : ""}</div>
             </section>
         </div>
             </div>
