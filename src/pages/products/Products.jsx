@@ -5,16 +5,18 @@ import FilterBtns from "../../components/filterBtns/FilterBtns";
 
 const Products = () => {
     const [dataArray, setDataArray] = useState([]); // Initialize as an empty array
+    const [clonedDataArray, setClonedDataArray] = useState([])
     const headline = "Our Products"
 
     useEffect(() => {
-        loadProducts();
+        loadProducts('https://dummyjson.com/products');
     }, []);
 
-    const loadProducts = async () => {
+    const loadProducts = async (data) => {
         try {
-            const result = await axios.get('https://dummyjson.com/products');
-            setDataArray(result.data.products); // Set the state to the 'products' array
+            const result = await axios.get(data);
+            setDataArray(result.data.products);
+            setClonedDataArray(result.data.products);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -27,7 +29,7 @@ const Products = () => {
                     {headline}
                 </header>
                 <div className="underline"></div>
-                    <FilterBtns />
+                <FilterBtns clonedDataArray={clonedDataArray} setDataArray={setDataArray}/>
             </div>
             <div className="products__wrapper">
                 <div className="products" id="products">

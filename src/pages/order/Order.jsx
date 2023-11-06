@@ -35,10 +35,10 @@ const Order = () => {
         }
     }
 
-    //renders the products
-    const loadProducts = async (data) => {
+    //loads the products
+    const loadProducts = async () => {
             try {
-                const result = await axios.get(data);
+                const result = await axios.get('https://dummyjson.com/products');
                 setDataArray(result.data.products);
                 setClonedDataArray(result.data.products);
             } catch (error) {
@@ -47,7 +47,7 @@ const Order = () => {
     }
 
     useEffect(() => {
-        loadProducts('https://dummyjson.com/products');
+        loadProducts();
     }, []);
 
     return (
