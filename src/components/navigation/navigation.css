@@ -41,16 +41,16 @@
         border-bottom: 2px dotted #c7a46c;
         padding-bottom: 2px; }
 
-@media only screen and (min-width: 640px) {
+@media (min-width: 640px) {
   .nav__wrapper .navigation {
     font-size: 24px; } }
 
-@media only screen and (min-width: 1500px) {
+@media (min-width: 1500px) {
   .nav__wrapper .navigation {
     width: 60%;
     padding: 16px 0 0; } }
 
-@media only screen and (max-width: 640px) {
+@media (max-width: 640px) {
   .nav__wrapper .navigation .navigation__links .link__list {
     flex-direction: column;
     position: absolute;

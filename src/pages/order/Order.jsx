@@ -3,6 +3,7 @@ import FilterBtns from "../../components/filterBtns/FilterBtns";
 import "./order.css";
 import Items from "../../components/items/Items";
 import axios from "axios";
+import {useMediaQuery} from "@react-hook/media-query";
 
 const Order = () => {
     const [showCart, setShowcart] = useState(false);
@@ -16,6 +17,7 @@ const Order = () => {
     const orderBtnText = "Jetzt Bestellen";
     const shoppingCartPlaceholder = "Noch keine Einträge im Warenkorb"
     const totalText = "Summe:"
+    const isItDesktop = useMediaQuery('(min-width: 640px)')
     let totalPriceCalculate = 0
 
 
@@ -63,6 +65,9 @@ const Order = () => {
         alert("Bestellung wurde aufgenommen")
     }
 
+
+
+
     useEffect(() => {
         loadProducts();
         window.scrollTo(0 ,0)
@@ -83,10 +88,10 @@ const Order = () => {
                     {`Warenkorb (${itemsInCart})`}
                 </div>
             <div className={showCart ? "blend__background" : ""} id="backgroundPop" onClick={showShoppingCart}></div>
-            <section className={showCart ? "shoppingCartPop" : ""} id="shoppingCartPop">
-                <div className="shoppingCartPop__header">{showCart ? shoppingCartHeadline : ""}</div>
+            <section className={showCart || isItDesktop ? "shoppingCartPop" : ""} id="shoppingCartPop">
+                <div className="shoppingCartPop__header">{showCart || isItDesktop? shoppingCartHeadline : ""}</div>
                 <div className="shoppingCartPop__content" id="shoppingCartPopContent">
-                    {itemsInCart === 0 && shoppingCartItems.length === 0 && showCart ? shoppingCartPlaceholder : showCart ? shoppingCartItems.map((product) => (
+                    {itemsInCart === 0 && shoppingCartItems.length === 0 && (showCart || isItDesktop) ? shoppingCartPlaceholder : showCart ? shoppingCartItems.map((product) => (
                         <div className="shoppingCartItem__wrapper" key={product.id}>
                             <div className="shoppingCartItem__name">{product.title} ({product.quantity})</div>
                             <div className="shoppingCartItem__price">{(product.price * product.quantity).toFixed(2)}</div>
@@ -100,7 +105,7 @@ const Order = () => {
                         </div> : null
                 }
                 </div>
-                <div className={itemsInCart === 0 ? "shoppingCartPop__orderBtnInactive" :"shoppingCartPop__orderBtnActive"} id="shoppingCartPopOrderBtn" onClick={order}>{showCart ? orderBtnText : ""}</div>
+                <div className={itemsInCart === 0 ? "shoppingCartPop__orderBtnInactive" :"shoppingCartPop__orderBtnActive"} id="shoppingCartPopOrderBtn" onClick={order}>{showCart || isItDesktop? orderBtnText : ""}</div>
             </section>
         </div>
             </div>

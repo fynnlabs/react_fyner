@@ -84,11 +84,11 @@
 .total__text {
   font-weight: 700; }
 
-@media only screen and (min-width: 640px) {
+@media (min-width: 640px) {
   .content__wrapper .shoppingCartPop {
     width: 60%; } }
 
-@media only screen and (min-width: 1440px) {
+@media (min-width: 1440px) {
   .content__wrapper .blend__background {
     visibility: hidden !important; }
   .content__wrapper .shoppingCartPop {

@@ -57,7 +57,7 @@
     width: 100%;
     rotate: 3deg; }
 
-@media only screen and (min-width: 640px) {
+@media (min-width: 640px) {
   .content__wrapper {
     flex: none;
     height: 100%; }
@@ -74,7 +74,7 @@
     .content__wrapper .underline {
       margin: 0 auto 80px; } }
 
-@media only screen and (min-width: 1000px) {
+@media (min-width: 1000px) {
   .content__wrapper .header {
     font-size: 56px;
     padding-top: 80px; }

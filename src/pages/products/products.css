@@ -73,7 +73,7 @@
 .headDesWrapper {
   max-width: 700px; }
 
-@media only screen and (min-width: 640px) {
+@media (min-width: 640px) {
   .content__wrapper {
     flex: 1; }
     .content__wrapper .header__wrapper {
@@ -100,7 +100,7 @@
     min-width: 420px;
     max-width: 420px; } }
 
-@media only screen and (min-width: 1500px) {
+@media (min-width: 1500px) {
   .content__wrapper {
     flex: none; }
     .content__wrapper .header__wrapper {

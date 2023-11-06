@@ -1,6 +1,7 @@
 import './navigation.css'
 import React, {useEffect, useState} from "react";
 import {Link, NavLink} from "react-router-dom";
+import {useMediaQuery} from "@react-hook/media-query";
 
 
 export default function Navigation() {
@@ -15,6 +16,7 @@ export default function Navigation() {
     const nameLabel = "Fyner"
     const hamburgerLength = [1,2,3]
     const [ifScrolled, setIfScrolled] = useState('')
+    const isItDesktop = useMediaQuery('(min-width: 640px)')
 
     // useEffects
     /**
@@ -51,7 +53,7 @@ export default function Navigation() {
                             ))
                         }
                     </div>
-                    { isNavOpen &&
+                    {(isNavOpen || isItDesktop )&&
                         <ul className="link__list show" id="linkList">
                             <li className="link">
                                 <NavLink className={({ isActive}) =>

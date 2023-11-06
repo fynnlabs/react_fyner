@@ -84,7 +84,7 @@
   }
 }
 
-@media only screen and (min-width: 640px) {
+@media (min-width: 640px) {
   .content__wrapper {
     flex: none;
     height: 100%;
@@ -116,7 +116,7 @@
   }
 }
 
-@media only screen and (min-width: 1000px) {
+@media (min-width: 1000px) {
   .content__wrapper {
     .header {
       font-size: 56px;
