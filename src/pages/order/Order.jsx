@@ -20,7 +20,6 @@ const Order = () => {
     const isItDesktop = useMediaQuery('(min-width: 1440px)')
     let totalPriceCalculate = 0
 
-
     //toggles the shoppingCart
     const showShoppingCart = () => {
         setShowcart(!showCart);
@@ -47,8 +46,7 @@ const Order = () => {
         setTotalPrice(totalPriceCalculate)
     }
 
-
-        //loads the products
+    //loads the products
     const loadProducts = async () => {
             try {
                 const result = await axios.get('https://dummyjson.com/products');
@@ -63,9 +61,6 @@ const Order = () => {
         setShoppingCartItems([])
         setItemsInCart(0)
     }
-
-
-
 
     useEffect(() => {
         loadProducts();

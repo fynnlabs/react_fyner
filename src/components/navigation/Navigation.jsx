@@ -3,7 +3,6 @@ import React, {useEffect, useState} from "react";
 import {Link, NavLink} from "react-router-dom";
 import {useMediaQuery} from "@react-hook/media-query";
 
-
 export default function Navigation() {
     //variables
     /**
@@ -39,15 +38,13 @@ export default function Navigation() {
         setIsNavOpen((prev) => !prev)
     }
 
-
-
     return (
         <div className={isNavOpen ? 'nav__wrapper nav__background' : `nav__wrapper ${ifScrolled}`} id="navigation">
             <nav className="navigation">
                 <Link className="navigation__logo" to="/">
                     {nameLabel}
                 </Link>
-                <div className="navigation__links" onClick={toggleNavigation}>
+                <div className="navigation__links" onClick={isItDesktop ? null  : toggleNavigation}>
                     <div className="hamburger__menu" id="hamburgerMenu">
                         { hamburgerLength.map((index) => (
                             <div key={index} className="bar"></div>
