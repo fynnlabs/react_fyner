@@ -17,7 +17,7 @@ const Order = () => {
     const orderBtnText = "Jetzt Bestellen";
     const shoppingCartPlaceholder = "Noch keine Einträge im Warenkorb"
     const totalText = "Summe:"
-    const isItDesktop = useMediaQuery('(min-width: 640px)')
+    const isItDesktop = useMediaQuery('(min-width: 1440px)')
     let totalPriceCalculate = 0
 
 

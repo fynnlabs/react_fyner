@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from 'react';
 import './products.css';
 import FilterBtns from "../../components/filterBtns/FilterBtns";
+import Items from "../../components/items/Items";
 
 const Products = () => {
     const [dataArray, setDataArray] = useState([]); // Initialize as an empty array
@@ -32,22 +33,7 @@ const Products = () => {
                 <div className="underline"></div>
                 <FilterBtns clonedDataArray={clonedDataArray} setDataArray={setDataArray}/>
             </div>
-            <div className="products__wrapper">
-                <div className="products" id="products">
-                    {dataArray.map((product) => (
-                        <div className="imagetext__wrapper" key={product.id}>
-                            <img src={product.thumbnail} alt="" className="left__image" />
-                            <div className="headDesWrapper">
-                                <div className="text__headline">
-                                    {product.title}
-                                    <div className="price__color">{`$${product.price}`}</div>
-                                </div>
-                                <div className="text__description">{product.description}</div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+           <Items dataArray={dataArray}/>
         </div>
     );
 };

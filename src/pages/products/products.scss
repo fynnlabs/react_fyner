@@ -37,59 +37,6 @@
       padding: 0;
     }
   }
-
-  .products{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-  }
-}
-
-.products__wrapper {
-  padding: 16px;
-  margin: 0 auto;
-}
-
-.imagetext__wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding-bottom: 24px;
-}
-
-.left__image {
-  max-width: 100%;
-  max-height: 208px;
-  min-height: 208px;
-  border: 2px solid $primaryGold;
-  border-radius: 8px;
-}
-
-.text__headline {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px dotted $neutralWhite;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  padding-top: 10px;
-  color: $primaryGold;
-
-}
-
-.text__description {
-  padding-top: 10px;
-  opacity: .7;
-  color: $neutralWhite;
-}
-
-.price__color {
-  color: $primaryGold;
-}
-
-.headDesWrapper {
-  max-width: 700px;
 }
 
 @media (min-width: 640px) {
@@ -100,40 +47,6 @@
       padding: 80px 0;
     }
   }
-
-  .text__headline {
-    padding-bottom: 4px;
-    padding-top: 0;
-    font-size: 24px;
-  }
-
-  .text__description {
-    padding-top: 24px;
-  }
-
-  .products__wrapper {
-    padding: 0;
-  }
-
-  .left__image {
-    min-width: 300px;
-    max-width: 300px;
-    max-height: 220px;
-    min-height: 220px;
-  }
-
-  .imagetext__wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  .headDesWrapper {
-    min-width: 420px;
-    max-width: 420px;
-  }
-
 }
 
 @media (min-width: 1500px) {
@@ -148,32 +61,5 @@
         font-size: 56px;
       }
     }
-  }
-
-  .products {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .imagetext__wrapper {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    padding-bottom: 48px;
-    flex-basis: 45%;
-    margin: 0 4px;
-  }
-
-  .left__image {
-    min-width: 288px;
-    max-width: 288px;
-  }
-
-  .products__wrapper {
-    width: 70%;
-    padding: 32px 0;
   }
 }

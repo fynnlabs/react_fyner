@@ -1,7 +1,8 @@
 import './items.css';
 
-const Items = ({ addItemToCart, dataArray }) => { // Receive addToCart as a prop
+const Items = ({ addItemToCart, dataArray }) => {
     const plus = "+";
+
 
     return (
         <div className="products__wrapper">
@@ -14,7 +15,7 @@ const Items = ({ addItemToCart, dataArray }) => { // Receive addToCart as a prop
                             </div>
                             <div className="text__description">{product.description}</div>
                         </div>
-                        <img src={product.thumbnail} alt="" className="left__image" />
+                        <img src={product.thumbnail} alt="" className="image" />
                         <div className="pricePlusWrapper">
                             <div className="price price__color">{`$${product.price}`}</div>
                             <div className="plus" onClick={() => addItemToCart(product)}> {plus}</div> {/* Call addToCart when the plus button is clicked */}

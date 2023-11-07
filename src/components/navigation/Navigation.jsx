@@ -20,24 +20,25 @@ export default function Navigation() {
 
     // useEffects
     /**
+     *
      * reactive functions
      * will either get triggered on page load or when dependency is met
      */
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY < 15) {
+                setIfScrolled('');
+            } else {
+                setIfScrolled('nav__background');
+            }
+        });
+    }, [])
 
     // normal functions
     const toggleNavigation = () => {
         setIsNavOpen((prev) => !prev)
     }
 
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-                if (window.scrollY < 15) {
-                    setIfScrolled('');
-                } else {
-                    setIfScrolled('nav__background');
-                }
-            });
-        }, [])
 
 
     return (

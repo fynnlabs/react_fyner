@@ -2,17 +2,20 @@
 
 .products__wrapper {
   margin: 0 auto;
+  }
+
+.imagetext__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: $backgroundProducts;
+  margin: 16px;
 }
 
-
-.text__headline {
-  padding: 0 0 12px;
-  color: $primaryGold;
-  font-weight: 700;
-}
-
-.text__description {
-  color: $neutralWhite;
+.text__wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .image {
@@ -55,23 +58,35 @@
   cursor: pointer;
 }
 
-.imagetext__wrapper {
+.text__headline {
   display: flex;
-  flex-direction: column;
-  padding: 16px;
-  border-radius: 12px;
-  margin:0 0 24px 0;
-  background-color: $backgroundProducts;
+  justify-content: space-between;
+  border-bottom: 1px dotted $neutralWhite;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 10px 0 4px;
+  color: $primaryGold;
 }
 
-.text__wrapper {
-  display: flex;
-  flex-direction: column;
+.text__description {
+  padding: 16px 0 0;
+  color: $neutralWhite;
 }
 
 @media (min-width: 640px) {
+  .products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    }
+
   .imagetext__wrapper {
+    display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
     flex-wrap: wrap;
   }
 
@@ -81,10 +96,8 @@
     order: 2;
   }
 
-  .pricePlusWrapper {
-    margin-left: 50%;
-    width: 100%;
-    order: 3;
+  .text__headline {
+    font-size: 30px;
   }
 
   .image {
@@ -92,23 +105,30 @@
     max-width: 50%;
   }
 
-  .products{
-    gap: 0;
+  .pricePlusWrapper {
+    margin-left: 50%;
+    width: 100%;
+    order: 3;
   }
 }
 
 @media (min-width: 1440px) {
   .products__wrapper {
+    display: flex;
+    justify-content: center;
     width: 100%;
+  }
 
-    .products{
-      display: flex;
-      flex-direction: column;
+  .products{
+    display: flex;
+    flex-direction: column;
+    min-width: 70%;
+  }
 
-      .imagetext__wrapper{
-        min-width: 60%;
-        max-width: 60%;
-      }
-    }
+  .imagetext__wrapper{
+    margin-bottom: 16px;
+    min-width: 60%;
+    max-width: 60%;
   }
 }
+
