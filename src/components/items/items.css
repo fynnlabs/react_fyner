@@ -28,7 +28,7 @@
 .price {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: fit-content;
   font-weight: 900;
   color: #e6e6e6; }
 
@@ -85,7 +85,9 @@
   .pricePlusWrapper {
     margin-left: 50%;
     width: 100%;
-    order: 3; } }
+    order: 3; }
+  .price {
+    font-size: 24px; } }
 
 @media (min-width: 1440px) {
   .products__wrapper {
