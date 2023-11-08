@@ -10,7 +10,7 @@ const Products = () => {
     const headline = "Our Products"
 
     useEffect(() => {
-        loadProducts();
+        loadProducts()
         window.scrollTo(0 ,0)
     }, []);
 

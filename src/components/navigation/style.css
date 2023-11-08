@@ -45,7 +45,7 @@
   .nav__wrapper .navigation {
     font-size: 24px; } }
 
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .nav__wrapper .navigation {
     width: 60%;
     padding: 16px 0 0; } }

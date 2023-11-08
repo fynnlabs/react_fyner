@@ -6,7 +6,7 @@ import axios from "axios";
 import {useMediaQuery} from "@react-hook/media-query";
 
 const Order = () => {
-    const [showCart, setShowcart] = useState(false);
+    const [showCart, setShowCart] = useState(false);
     const [itemsInCart, setItemsInCart] = useState(0);
     const [dataArray, setDataArray] = useState([]);
     const [clonedDataArray, setClonedDataArray] = useState([])
@@ -22,7 +22,7 @@ const Order = () => {
 
     //toggles the shoppingCart
     const showShoppingCart = () => {
-        setShowcart(!showCart);
+        setShowCart(!showCart);
     }
 
     //adds items to shoppingCart
@@ -61,6 +61,7 @@ const Order = () => {
     const orderBtnClick = () => {
         setShoppingCartItems([])
         setItemsInCart(0)
+        setShowCart(!showCart);
         alert("Ihre Bestellung wurde aufgenommen")
     }
 
