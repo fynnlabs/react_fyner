@@ -4,6 +4,7 @@ import "./style.css";
 import Items from "../../components/items/Items";
 import axios from "axios";
 import {useMediaQuery} from "@react-hook/media-query";
+import MyLoader from "../../components/myLoader/MyLoader";
 
 const Order = () => {
     const [showCart, setShowCart] = useState(false);
@@ -19,6 +20,8 @@ const Order = () => {
     const totalText = "Summe:"
     const isItDesktop = useMediaQuery('(min-width: 1440px)')
     let totalPriceCalculate = 0
+    const [isData, setIsData] = useState(false)
+
 
     //toggles the shoppingCart
     const showShoppingCart = () => {
@@ -50,6 +53,7 @@ const Order = () => {
     const loadProducts = async () => {
             try {
                 const result = await axios.get('https://dummyjson.com/products');
+                setIsData(true)
                 setDataArray(result.data.products);
                 setClonedDataArray(result.data.products);
             } catch (error) {
@@ -80,7 +84,7 @@ const Order = () => {
                     <div className="underline"></div>
                     <FilterBtns clonedDataArray={clonedDataArray} setDataArray={setDataArray}/>
                 </div>
-                <Items addItemToCart={addItemToCart} dataArray={dataArray}/>
+                {isData ?<Items addItemToCart={addItemToCart} dataArray={dataArray}/> : <MyLoader />}
                 <div className="shoppingCart" id="shoppingCart" onClick={showShoppingCart}>
                     {`Warenkorb (${itemsInCart})`}
                 </div>

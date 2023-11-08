@@ -9,7 +9,7 @@ const Products = () => {
     const [dataArray, setDataArray] = useState([]); // Initialize as an empty array
     const [clonedDataArray, setClonedDataArray] = useState([])
     const headline = "Our Products"
-    const [test, setTest] = useState(false)
+    const [isData, setIsData] = useState(false)
 
     useEffect(() => {
         loadProducts()
@@ -19,7 +19,7 @@ const Products = () => {
     const loadProducts = async () => {
         try {
             const result = await axios.get('https://dummyjson.com/products');
-            setTest(true)
+            setIsData(true)
             setDataArray(result.data.products);
             setClonedDataArray(result.data.products);
         } catch (error) {
@@ -36,7 +36,7 @@ const Products = () => {
                 <div className="underline"></div>
                 <FilterBtns clonedDataArray={clonedDataArray} setDataArray={setDataArray}/>
             </div>
-            {test ?<Items dataArray={dataArray}/> : <MyLoader />}
+            {isData ?<Items dataArray={dataArray}/> : <MyLoader />}
         </div>
     );
 };

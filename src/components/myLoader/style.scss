@@ -27,10 +27,12 @@
   align-items: center;
   margin: 16px auto;
   border: 8px solid $backgroundProducts;
+  border-radius: 12px;
   width: 930px;
   height: 312px;
   gap: 8px;
   animation: skeleton-loadingFrame 2s infinite linear alternate;
+  opacity: 0.5;
 }
 
 .skeleton__image{
