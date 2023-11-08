@@ -1,4 +1,4 @@
-import './navigation.css'
+import './style.css'
 import React, {useEffect, useState} from "react";
 import {Link, NavLink} from "react-router-dom";
 import {useMediaQuery} from "@react-hook/media-query";

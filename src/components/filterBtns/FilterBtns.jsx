@@ -1,5 +1,5 @@
 import React from 'react';
-import "./filterBtns.css"
+import "./style.css"
 
 const FilterBtns = ({clonedDataArray, setDataArray }) => {
     const filterBtns = ["All", "Smartphones", "Laptops", "Fragrances", "Skincare", "Groceries", "Home-Decoration"];

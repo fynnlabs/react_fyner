@@ -20,15 +20,15 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch:scss_filterBtns": "node-sass -w src/components/filterBtns/filterBtns.scss src/components/filterBtns/filterBtns.css",
-    "watch:scss_navigation": "node-sass -w src/components/navigation/navigation.scss src/components/navigation/navigation.css",
+    "watch:scss_filterBtns": "node-sass -w src/components/filterBtns/style.scss src/components/filterBtns/style.css",
+    "watch:scss_navigation": "node-sass -w src/components/navigation/style.scss src/components/navigation/style.css",
     "watch:scss_index": "node-sass -w src/index.scss src/index.css",
-    "watch:scss_footer": "node-sass -w src/components/footer/footer.scss src/components/footer/footer.css",
-    "watch:scss_aboutUs": "node-sass -w src/pages/aboutUs/aboutUs.scss src/pages/aboutUs/aboutUs.css",
-    "watch:scss_home": "node-sass -w src/pages/home/home.scss src/pages/home/home.css",
-    "watch:scss_order": "node-sass -w src/pages/order/order.scss src/pages/order/order.css",
-    "watch:scss_products": "node-sass -w src/pages/products/products.scss src/pages/products/products.css",
-    "watch:scss_items": "node-sass -w src/components/items/items.scss src/components/items/items.css"
+    "watch:scss_footer": "node-sass -w src/components/footer/style.scss src/components/footer/style.css",
+    "watch:scss_aboutUs": "node-sass -w src/pages/aboutUs/style.scss src/pages/aboutUs/style.css",
+    "watch:scss_home": "node-sass -w src/pages/home/style.scss src/pages/home/style.css",
+    "watch:scss_order": "node-sass -w src/pages/order/style.scss src/pages/order/style.css",
+    "watch:scss_products": "node-sass -w src/pages/products/style.scss src/pages/products/style.css",
+    "watch:scss_items": "node-sass -w src/components/items/style.scss src/components/items/style.css"
   },
   "eslintConfig": {
     "extends": [

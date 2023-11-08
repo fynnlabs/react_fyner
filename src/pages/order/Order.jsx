@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import FilterBtns from "../../components/filterBtns/FilterBtns";
-import "./order.css";
+import "./style.css";
 import Items from "../../components/items/Items";
 import axios from "axios";
 import {useMediaQuery} from "@react-hook/media-query";
@@ -57,9 +57,11 @@ const Order = () => {
             }
     }
 
+    //removes everything from the shoppingCart
     const orderBtnClick = () => {
         setShoppingCartItems([])
         setItemsInCart(0)
+        alert("Ihre Bestellung wurde aufgenommen")
     }
 
     useEffect(() => {

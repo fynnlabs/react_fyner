@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import "./aboutUs.css"
+import "./style.css"
 
 const About = () => {
     const storeFront = require('../../assets/images/storeFront.png')

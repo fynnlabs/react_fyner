@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from 'react';
-import './products.css';
+import './style.css';
 import FilterBtns from "../../components/filterBtns/FilterBtns";
 import Items from "../../components/items/Items";
 
@@ -33,7 +33,7 @@ const Products = () => {
                 <div className="underline"></div>
                 <FilterBtns clonedDataArray={clonedDataArray} setDataArray={setDataArray}/>
             </div>
-           <Items dataArray={dataArray}/>
+            <Items dataArray={dataArray}/>
         </div>
     );
 };

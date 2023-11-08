@@ -1,4 +1,4 @@
-import './items.css';
+import './style.css';
 import {useLocation} from "react-router-dom";
 
 const Items = ({ addItemToCart, dataArray }) => {
