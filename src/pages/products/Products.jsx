@@ -19,9 +19,9 @@ const Products = () => {
     const loadProducts = async () => {
         try {
             const result = await axios.get('https://dummyjson.com/products');
-            setIsData(true)
             setDataArray(result.data.products);
             setClonedDataArray(result.data.products);
+            setIsData(true)
         } catch (error) {
             console.error('Error fetching data:', error);
         }
