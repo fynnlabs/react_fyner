@@ -1,0 +1,47 @@
+@keyframes skeleton-loadingFrame {
+  0% {
+    border-color: #032350; }
+  100% {
+    border-color: #031356; } }
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #032350; }
+  100% {
+    background-color: #031356; } }
+
+.skeleton__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 16px auto;
+  border: 8px solid #032350;
+  width: 930px;
+  height: 312px;
+  gap: 8px;
+  animation: skeleton-loadingFrame 2s infinite linear alternate; }
+
+.skeleton__image {
+  width: 360px;
+  height: 225px;
+  background: #032350;
+  animation: skeleton-loading 2s infinite linear alternate; }
+
+.skeleton__textWrapper {
+  height: 225px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; }
+
+.skeleton__header {
+  width: 450px;
+  height: 40px;
+  background: #032350;
+  animation: skeleton-loading 2s infinite linear alternate; }
+
+.skeleton__description {
+  width: 450px;
+  height: 40px;
+  background: #032350;
+  animation: skeleton-loading 2s infinite linear alternate; }
