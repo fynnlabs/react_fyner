@@ -1,16 +1,21 @@
 import './style.css'
 
 export default function Footer(){
+    const address = 'Fyner - Hamburger Allee 23, 30161 Hannover'
+    const impressum = 'Impressum'
+    const datenschutz = 'Datenschutz'
+    const kontakt = 'Kontakt'
+
     return(
         <section className="footer__wrapper">
             <div className="footer">
                 <a className="link__restaurant" href="/">
-                    Fyner - Hamburger Allee 23, 30161 Hannover
+                    {address}
                 </a>
                 <div className="infos">
-                    <a className="link__info" href="/">Impressum</a>
-                    <a className="link__info" href="/">Datenschutz</a>
-                    <a className="link__info" href="/">Kontakt</a>
+                    <a className="link__info" href="/">{impressum}</a>
+                    <a className="link__info" href="/">{datenschutz}</a>
+                    <a className="link__info" href="/">{kontakt}</a>
                 </div>
             </div>
         </section>

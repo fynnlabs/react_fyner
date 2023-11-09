@@ -13,6 +13,7 @@ const Order = () => {
     const [clonedDataArray, setClonedDataArray] = useState([])
     const [shoppingCartItems, setShoppingCartItems]  = useState([]);
     const [totalPrice, setTotalPrice] = useState(0)
+    const [isData, setIsData] = useState(false)
     const headline = "Order";
     const shoppingCartHeadline = "Warenkorb";
     const orderBtnText = "Jetzt Bestellen";
@@ -20,7 +21,6 @@ const Order = () => {
     const totalText = "Summe:"
     const isItDesktop = useMediaQuery('(min-width: 1440px)')
     let totalPriceCalculate = 0
-    const [isData, setIsData] = useState(false)
 
 
     //toggles the shoppingCart

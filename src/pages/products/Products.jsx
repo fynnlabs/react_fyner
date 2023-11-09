@@ -8,8 +8,8 @@ import MyLoader from "../../components/myLoader/MyLoader";
 const Products = () => {
     const [dataArray, setDataArray] = useState([]); // Initialize as an empty array
     const [clonedDataArray, setClonedDataArray] = useState([])
-    const headline = "Our Products"
     const [isData, setIsData] = useState(false)
+    const headline = "Our Products"
 
     useEffect(() => {
         loadProducts()

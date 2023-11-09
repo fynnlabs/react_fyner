@@ -3,6 +3,7 @@ import './style.css'
 import {Link} from "react-router-dom";
 
 const Home = () => {
+    const ctaBtnText = 'View Products'
 
     useEffect(() => {
         window.scrollTo(0 ,0)
@@ -13,7 +14,7 @@ const Home = () => {
         <div className="content">
             <div className="image__background">
                 <Link className="cta__btn" to="/products">
-                    View Products
+                    {ctaBtnText}
                 </Link>
             </div>
             <div className="catchy__text">

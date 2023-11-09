@@ -9,12 +9,12 @@ export default function Navigation() {
      * useState = get(Value of variable) / set(set new value of variable)
      */
     const [isNavOpen, setIsNavOpen] = useState(false)
+    const [ifScrolled, setIfScrolled] = useState('')
     const ourProductLabel = 'Our Products'
     const orderLabel = 'Order'
     const aboutUsLabel = 'About us'
     const nameLabel = "Fyner"
     const hamburgerLength = [1,2,3]
-    const [ifScrolled, setIfScrolled] = useState('')
     const isItDesktop = useMediaQuery('(min-width: 640px)')
 
     // useEffects
