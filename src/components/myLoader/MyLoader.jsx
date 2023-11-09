@@ -2,10 +2,10 @@ import React from 'react';
 import './style.css'
 
 const MyLoader = () => {
-    const testArray = [1,2,3,4,5,6,7];
+    const timesMyLoader = [1,2,3,4,5,6,7];
 
     return (
-        testArray.map(() => (
+        timesMyLoader.map(() => (
             <div className="skeleton__wrapper">
                 <div className="skeleton__image" ></div>
                 <div className="skeleton__textWrapper">

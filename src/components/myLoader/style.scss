@@ -6,7 +6,7 @@
   }
 
   100%{
-    border-color: #031356;
+    border-color: $loaderColor;
   }
 }
 
@@ -16,7 +16,7 @@
   }
 
   100%{
-    background-color: #031356;
+    background-color: $loaderColor;
   }
 }
 
@@ -33,33 +33,36 @@
   gap: 8px;
   animation: skeleton-loadingFrame 2s infinite linear alternate;
   opacity: 0.5;
+
+  .skeleton__image{
+    width: 360px;
+    height: 225px;
+    background: $backgroundProducts;
+    animation: skeleton-loading 2s infinite linear alternate;
+  }
+
+  .skeleton__textWrapper{
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .skeleton__header{
+      width: 450px;
+      height: 40px;
+      background: $backgroundProducts;
+      animation: skeleton-loading 2s infinite linear alternate;
+
+    }
+
+    .skeleton__description{
+      width: 450px;
+      height: 40px;
+      background: $backgroundProducts;
+      animation: skeleton-loading 2s infinite linear alternate;
+    }
+  }
 }
 
-.skeleton__image{
-  width: 360px;
-  height: 225px;
-  background: $backgroundProducts;
-  animation: skeleton-loading 2s infinite linear alternate;
-}
 
-.skeleton__textWrapper{
-  height: 225px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
 
-.skeleton__header{
-  width: 450px;
-  height: 40px;
-  background: $backgroundProducts;
-  animation: skeleton-loading 2s infinite linear alternate;
-
-}
-
-.skeleton__description{
-  width: 450px;
-  height: 40px;
-  background: $backgroundProducts;
-  animation: skeleton-loading 2s infinite linear alternate;
-}

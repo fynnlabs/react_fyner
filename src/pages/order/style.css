@@ -53,7 +53,7 @@
     height: 50px;
     font-size: 24px;
     font-weight: 700;
-    background-color: #0A1E3F;
+    background-color: #032350;
     opacity: 0.4; }
   .content__wrapper .shoppingCartPop .shoppingCartPop__orderBtnActive {
     display: flex;
@@ -63,7 +63,7 @@
     height: 50px;
     font-size: 24px;
     font-weight: 700;
-    background-color: #0A1E3F;
+    background-color: #032350;
     opacity: 1;
     border: 1px solid #c7a46c; }
 
