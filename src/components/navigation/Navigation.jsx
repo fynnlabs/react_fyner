@@ -27,12 +27,7 @@ export default function Navigation() {
     useEffect( () => {
         window.addEventListener('resize', () =>{
             setWindowWidth(window.innerWidth)
-            if (windowWidth > 640){
-                setIsItDesktop(true)
-            } else {
-                setIsItDesktop(false)
-            }
-        } )
+        })
         window.addEventListener('load', () =>{
             setWindowWidth(window.innerWidth)
             if (windowWidth > 640){
@@ -40,8 +35,15 @@ export default function Navigation() {
             } else {
                 setIsItDesktop(false)
             }
-        } )
+        })
+    }, [windowWidth])
 
+    useEffect(() => {
+        if (windowWidth > 640){
+            setIsItDesktop(true)
+        } else {
+            setIsItDesktop(false)
+        }
     }, [windowWidth])
 
     useEffect(() => {
