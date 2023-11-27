@@ -128,14 +128,12 @@
   .products{
     display: flex;
     flex-direction: column;
-    min-width: 70%;
+    width: 70%;
   }
 
   .imagetext__wrapper{
     margin-bottom: 16px;
-
-    min-width: 60%;
-    max-width: 60%;
+    width: 60%;
   }
 }
 

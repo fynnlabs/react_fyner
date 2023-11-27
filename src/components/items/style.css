@@ -14,7 +14,8 @@
   flex-direction: column; }
 
 .image {
-  width:  100%;
+  min-width: 100%;
+  max-width: 100%;
   min-height: 280px;
   max-height: 280px;
   transform: scale(0.8);
@@ -81,7 +82,8 @@
   .text__headline {
     font-size: 30px; }
   .image {
-    width: 50% }
+    min-width: 50%;
+    max-width: 50%; }
   .pricePlusWrapper {
     margin-left: 50%;
     width: 100%;
@@ -97,8 +99,7 @@
   .products {
     display: flex;
     flex-direction: column;
-    min-width: 70%; }
+    width: 70%; }
   .imagetext__wrapper {
     margin-bottom: 16px;
-    width: 60%;
-  } }
+    width: 60%; } }

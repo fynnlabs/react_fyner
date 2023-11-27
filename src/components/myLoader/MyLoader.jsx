@@ -6,13 +6,19 @@ const MyLoader = () => {
 
     return (
         timesMyLoader.map(() => (
-            <div key={uuidv4()} className="skeleton__wrapper">
-                <div className="skeleton__image" />
-                <div className="skeleton__textWrapper">
-                    <div className="skeleton__header" />
-                    <div className="skeleton__description" />
+            <div key={uuidv4()} className="wrapper">
+                <div className="skeleton__wrapper">
+                    <div  className="product__skeletonWrapper">
+                        <div className="skeleton__image" />
+                        <div className="skeleton__textWrapper">
+                            <div className="skeleton__header" />
+                            <div className="skeleton__description" />
+                        </div>
+                    </div>
                 </div>
-            </div>))
+            </div>
+
+            ))
     );
 };
 
