@@ -13,6 +13,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",
+    "uuid": "^9.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -30,7 +31,6 @@
     "watch:scss_products": "node-sass -w src/pages/products/style.scss src/pages/products/style.css",
     "watch:scss_items": "node-sass -w src/components/items/style.scss src/components/items/style.css",
     "watch:scss_myLoader": "node-sass -w src/components/myLoader/style.scss src/components/myLoader/style.css"
-
   },
   "eslintConfig": {
     "extends": [

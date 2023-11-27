@@ -23,6 +23,7 @@ const Order = () => {
     const totalText = "Summe:"
     const isItDesktop = useMediaQuery('(min-width: 1440px)')
     const url = 'https://dummyjson.com/products';
+    const alertMessage = "Ihre Bestellung wurde aufgenommen";
     let totalPriceCalculate = 0
 
     useEffect(() => {
@@ -73,7 +74,7 @@ const Order = () => {
         setShoppingCartItems([])
         setItemsInCart(0)
         setShowCart(prev => !prev);
-        alert("Ihre Bestellung wurde aufgenommen")
+        alert(alertMessage)
     }
 
     return (
@@ -94,12 +95,12 @@ const Order = () => {
             <section className={showCart || isItDesktop ? "shoppingCartPop" : ""} id="shoppingCartPop">
                 <div className="shoppingCartPop__header">{showCart || isItDesktop? shoppingCartHeadline : ""}</div>
                 <div className="shoppingCartPop__content" id="shoppingCartPopContent">
-                    {shoppingCartItems.length === 0 && (showCart || isItDesktop) ? shoppingCartPlaceholder : (showCart || isItDesktop) ? shoppingCartItems.map((product) => (
+                    {shoppingCartItems.length === 0 && (showCart || isItDesktop) ? shoppingCartPlaceholder : shoppingCartItems.map((product) => (
                         <div className="shoppingCartItem__wrapper" key={product.id}>
                             <div className="shoppingCartItem__name">{product.title} ({product.quantity})</div>
                             <div className="shoppingCartItem__price">{(product.price * product.quantity).toFixed(2)}</div>
                         </div>
-                    )) : null
+                    ))
                     }
                     {shoppingCartItems.length === 0 && (showCart || isItDesktop)  ? null: (showCart || isItDesktop) ?
                         <div className="total__wrapper">

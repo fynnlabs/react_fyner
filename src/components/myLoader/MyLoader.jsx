@@ -1,12 +1,12 @@
-import React from 'react';
-import './style.css'
+import './style.css';
+import { v4 as uuidv4 } from 'uuid';
 
 const MyLoader = () => {
     const timesMyLoader = [1,2,3,4,5,6,7];
 
     return (
         timesMyLoader.map(() => (
-            <div className="skeleton__wrapper">
+            <div key={uuidv4()} className="skeleton__wrapper">
                 <div className="skeleton__image" />
                 <div className="skeleton__textWrapper">
                     <div className="skeleton__header" />

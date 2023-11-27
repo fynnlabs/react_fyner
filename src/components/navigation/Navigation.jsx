@@ -1,7 +1,6 @@
 import './style.css'
 import React, {useEffect, useState} from "react";
 import {Link, NavLink} from "react-router-dom";
-import {useMediaQuery} from "@react-hook/media-query";
 
 export default function Navigation() {
     //variables
@@ -15,7 +14,9 @@ export default function Navigation() {
     const aboutUsLabel = 'About us'
     const nameLabel = "Fyner"
     const hamburgerLength = [1,2,3]
-    const isItDesktop = useMediaQuery('(min-width: 640px)')
+    const [isItDesktop, setIsItDesktop] = useState(false)
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
 
     // useEffects
     /**
@@ -23,6 +24,24 @@ export default function Navigation() {
      * reactive functions
      * will either get triggered on page load or when dependency is met
      */
+    useEffect( () => {
+        window.addEventListener('resize', () =>{
+            if (windowWidth > 640){
+                setIsItDesktop(true)
+            } else {
+                setIsItDesktop(false)
+            }
+        } )
+        window.addEventListener('load', () =>{
+            if (windowWidth > 640){
+                setIsItDesktop(true)
+            } else {
+                setIsItDesktop(false)
+            }
+        } )
+        setWindowWidth(window.innerWidth)
+    }, [windowWidth])
+
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (window.scrollY < 15) {
@@ -32,6 +51,7 @@ export default function Navigation() {
             }
         });
     }, [])
+
 
     // normal functions
     const toggleNavigation = () => {
@@ -51,7 +71,7 @@ export default function Navigation() {
                             ))
                         }
                     </div>
-                    {(isNavOpen || isItDesktop )&&
+                    {(isNavOpen || isItDesktop)&&
                         <ul className="link__list show" id="linkList">
                             <li className="link">
                                 <NavLink className={({ isActive}) =>
