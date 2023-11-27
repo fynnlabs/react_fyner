@@ -3,10 +3,10 @@ import './style.css'
 import {Link} from "react-router-dom";
 
 const Home = () => {
-    const ctaBtnText = 'View Products'
+    const ctaBtnText = 'View Products';
 
     useEffect(() => {
-        window.scrollTo(0 ,0)
+        window.scrollTo(0 ,0);
     }, []);
 
     return (

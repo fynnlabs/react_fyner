@@ -7,34 +7,35 @@ import {useMediaQuery} from "@react-hook/media-query";
 import MyLoader from "../../components/myLoader/MyLoader";
 
 const Order = () => {
+    //array of the products that gets loaded
+    const [dataArray, setDataArray] = useState([]);
+    //array of all the products for comparison
+    const [clonedDataArray, setClonedDataArray] = useState([]);
     const [showCart, setShowCart] = useState(false);
     const [itemsInCart, setItemsInCart] = useState(0);
-    //array of data that gets loaded
-    const [dataArray, setDataArray] = useState([]);
-    //array of all the data for comparison
-    const [clonedDataArray, setClonedDataArray] = useState([])
     const [shoppingCartItems, setShoppingCartItems]  = useState([]);
-    const [totalPrice, setTotalPrice] = useState(0)
-    const [isData, setIsData] = useState(false)
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [isData, setIsData] = useState(false);
+
     const headline = "Order";
     const shoppingCartHeadline = "Warenkorb";
     const orderBtnText = "Jetzt Bestellen";
-    const shoppingCartPlaceholder = "Noch keine Einträge im Warenkorb"
-    const totalText = "Summe:"
-    const isItDesktop = useMediaQuery('(min-width: 1440px)')
+    const shoppingCartPlaceholder = "Noch keine Einträge im Warenkorb";
+    const totalText = "Summe:";
+    const isItDesktop = useMediaQuery('(min-width: 1440px)');
     const url = 'https://dummyjson.com/products';
     const alertMessage = "Ihre Bestellung wurde aufgenommen";
     let totalPriceCalculate = 0
 
     useEffect(() => {
         loadProducts(url);
-        window.scrollTo(0 ,0)
+        window.scrollTo(0 ,0);
     }, []);
 
     //toggles the shoppingCart
     const showShoppingCart = () => {
         setShowCart(prev => !prev);
-    }
+    };
 
     //adds items to shoppingCart
     const addItemToCart = (product) => {
@@ -51,10 +52,10 @@ const Order = () => {
         }
 
         for (const item of shoppingCartItems){
-            totalPriceCalculate += item.price * item.quantity
+            totalPriceCalculate += item.price * item.quantity;
         }
 
-        setTotalPrice(totalPriceCalculate)
+        setTotalPrice(totalPriceCalculate);
     }
 
     //loads the products
@@ -63,19 +64,19 @@ const Order = () => {
                 const result = await axios.get(url);
                 setDataArray(result.data.products);
                 setClonedDataArray(result.data.products);
-                setIsData(true)
+                setIsData(true);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
-    }
+    };
 
     //removes everything from the shoppingCart
     const orderBtnClick = () => {
-        setShoppingCartItems([])
-        setItemsInCart(0)
+        setShoppingCartItems([]);
+        setItemsInCart(0);
         setShowCart(prev => !prev);
-        alert(alertMessage)
-    }
+        alert(alertMessage);
+    };
 
     return (
         <div>

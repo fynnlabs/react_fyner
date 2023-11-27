@@ -3,49 +3,42 @@ import React, {useEffect, useState} from "react";
 import {Link, NavLink} from "react-router-dom";
 
 export default function Navigation() {
-    //variables
-    /**
-     * useState = get(Value of variable) / set(set new value of variable)
-     */
-    const [isNavOpen, setIsNavOpen] = useState(false)
-    const [ifScrolled, setIfScrolled] = useState('')
-    const ourProductLabel = 'Our Products'
-    const orderLabel = 'Order'
-    const aboutUsLabel = 'About us'
-    const nameLabel = "Fyner"
-    const hamburgerLength = [1,2,3]
-    const [isItDesktop, setIsItDesktop] = useState(false)
+    const [isNavOpen, setIsNavOpen] = useState(false);
+    const [ifScrolled, setIfScrolled] = useState('');
+    const [isItDesktop, setIsItDesktop] = useState(false);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+    const ourProductLabel = 'Our Products';
+    const orderLabel = 'Order';
+    const aboutUsLabel = 'About us';
+    const nameLabel = "Fyner";
+    const hamburgerLength = [1,2,3];
 
-    // useEffects
-    /**
-     *
-     * reactive functions
-     * will either get triggered on page load or when dependency is met
-     */
+
+    //checks if window is desktop or mobile size
     useEffect( () => {
         window.addEventListener('resize', () =>{
-            setWindowWidth(window.innerWidth)
-        })
+            setWindowWidth(window.innerWidth);
+        });
         window.addEventListener('load', () =>{
-            setWindowWidth(window.innerWidth)
+            setWindowWidth(window.innerWidth);
             if (windowWidth > 640){
-                setIsItDesktop(true)
+                setIsItDesktop(true);
             } else {
-                setIsItDesktop(false)
+                setIsItDesktop(false);
             }
         })
-    }, [windowWidth])
+    }, [windowWidth]);
 
     useEffect(() => {
         if (windowWidth > 640){
-            setIsItDesktop(true)
+            setIsItDesktop(true);
         } else {
-            setIsItDesktop(false)
+            setIsItDesktop(false);
         }
-    }, [windowWidth])
+    }, [windowWidth]);
 
+    //when site is scrolled adds background to the navBar
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (window.scrollY < 15) {
@@ -54,13 +47,11 @@ export default function Navigation() {
                 setIfScrolled('nav__background');
             }
         });
-    }, [])
+    }, []);
 
-
-    // normal functions
     const toggleNavigation = () => {
-        setIsNavOpen((prev) => !prev)
-    }
+        setIsNavOpen((prev) => !prev);
+    };
 
     return (
         <div className={isNavOpen ? 'nav__wrapper nav__background' : `nav__wrapper ${ifScrolled}`} id="navigation">
@@ -99,4 +90,3 @@ export default function Navigation() {
         </div>
     )
 }
-

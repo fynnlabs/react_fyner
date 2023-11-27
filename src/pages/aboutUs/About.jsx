@@ -2,11 +2,12 @@ import React, {useEffect} from 'react';
 import "./style.css"
 
 const About = () => {
-    const storeFront = require('../../assets/images/storeFront.png')
-    const productImg = require('../../assets/images/iPhone.png')
-    const headline = 'About Us'
-    const storeHeadline = 'The Store'
-    const productsHeadline = 'The Products'
+    const storeFront = require('../../assets/images/storeFront.png');
+    const productImg = require('../../assets/images/iPhone.png');
+
+    const headline = 'About Us';
+    const storeHeadline = 'The Store';
+    const productsHeadline = 'The Products';
     const altImageRestaurant = "a empty restaurant with black and brown chairs some black lamps brown tables and golden partitions";
     const altImageFood = "a burger with a meat patty some salad and a portion of fries in front of it";
     const fillerText =" Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, cumque eligendi esse laudantium magnam\n" +
@@ -15,7 +16,7 @@ const About = () => {
         "molestiae perspiciatis quibusdam rerum suscipit. Sapiente.";
 
     useEffect(() => {
-        window.scrollTo(0 ,0)
+        window.scrollTo(0 ,0);
     }, []);
     
     return (

@@ -8,7 +8,7 @@ const FilterBtns = ({clonedDataArray, setDataArray }) => {
     const filterBtnClick = (category) => {
         let categoryCompare = category.toLowerCase();
         categoryCompare === 'all' ? setDataArray(clonedDataArray) : setDataArray(clonedDataArray.filter(product => product.category === categoryCompare));
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
     }
 
     return (

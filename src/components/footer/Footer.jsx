@@ -1,10 +1,10 @@
 import './style.css'
 
 export default function Footer(){
-    const address = 'Fyner - Hamburger Allee 23, 30161 Hannover'
-    const impressum = 'Impressum'
-    const datenschutz = 'Datenschutz'
-    const kontakt = 'Kontakt'
+    const address = 'Fyner - Hamburger Allee 23, 30161 Hannover';
+    const impressum = 'Impressum';
+    const datenschutz = 'Datenschutz';
+    const kontakt = 'Kontakt';
 
     return(
         <section className="footer__wrapper">
