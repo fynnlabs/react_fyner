@@ -7,10 +7,10 @@ const MyLoader = () => {
     return (
         timesMyLoader.map(() => (
             <div className="skeleton__wrapper">
-                <div className="skeleton__image" ></div>
+                <div className="skeleton__image" />
                 <div className="skeleton__textWrapper">
-                    <div className="skeleton__header"></div>
-                    <div className="skeleton__description"></div>
+                    <div className="skeleton__header" />
+                    <div className="skeleton__description" />
                 </div>
             </div>))
     );

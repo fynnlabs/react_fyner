@@ -10,15 +10,16 @@ const Products = () => {
     const [clonedDataArray, setClonedDataArray] = useState([])
     const [isData, setIsData] = useState(false)
     const headline = "Our Products"
+    const url = 'https://dummyjson.com/products';
 
     useEffect(() => {
-        loadProducts()
+        loadProducts(url)
         window.scrollTo(0 ,0)
     }, []);
 
-    const loadProducts = async () => {
+    const loadProducts = async (url) => {
         try {
-            const result = await axios.get('https://dummyjson.com/products');
+            const result = await axios.get(url);
             setDataArray(result.data.products);
             setClonedDataArray(result.data.products);
             setIsData(true)

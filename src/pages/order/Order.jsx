@@ -9,7 +9,9 @@ import MyLoader from "../../components/myLoader/MyLoader";
 const Order = () => {
     const [showCart, setShowCart] = useState(false);
     const [itemsInCart, setItemsInCart] = useState(0);
+    //array of data that gets loaded
     const [dataArray, setDataArray] = useState([]);
+    //array of all the data for comparison
     const [clonedDataArray, setClonedDataArray] = useState([])
     const [shoppingCartItems, setShoppingCartItems]  = useState([]);
     const [totalPrice, setTotalPrice] = useState(0)
@@ -20,12 +22,17 @@ const Order = () => {
     const shoppingCartPlaceholder = "Noch keine Einträge im Warenkorb"
     const totalText = "Summe:"
     const isItDesktop = useMediaQuery('(min-width: 1440px)')
+    const url = 'https://dummyjson.com/products';
     let totalPriceCalculate = 0
 
+    useEffect(() => {
+        loadProducts(url);
+        window.scrollTo(0 ,0)
+    }, []);
 
     //toggles the shoppingCart
     const showShoppingCart = () => {
-        setShowCart(!showCart);
+        setShowCart(prev => !prev);
     }
 
     //adds items to shoppingCart
@@ -50,9 +57,9 @@ const Order = () => {
     }
 
     //loads the products
-    const loadProducts = async () => {
+    const loadProducts = async (url) => {
             try {
-                const result = await axios.get('https://dummyjson.com/products');
+                const result = await axios.get(url);
                 setDataArray(result.data.products);
                 setClonedDataArray(result.data.products);
                 setIsData(true)
@@ -65,14 +72,9 @@ const Order = () => {
     const orderBtnClick = () => {
         setShoppingCartItems([])
         setItemsInCart(0)
-        setShowCart(!showCart);
+        setShowCart(prev => !prev);
         alert("Ihre Bestellung wurde aufgenommen")
     }
-
-    useEffect(() => {
-        loadProducts();
-        window.scrollTo(0 ,0)
-    }, []);
 
     return (
         <div>
@@ -92,21 +94,21 @@ const Order = () => {
             <section className={showCart || isItDesktop ? "shoppingCartPop" : ""} id="shoppingCartPop">
                 <div className="shoppingCartPop__header">{showCart || isItDesktop? shoppingCartHeadline : ""}</div>
                 <div className="shoppingCartPop__content" id="shoppingCartPopContent">
-                    {itemsInCart === 0 && shoppingCartItems.length === 0 && (showCart || isItDesktop) ? shoppingCartPlaceholder : (showCart || isItDesktop) ? shoppingCartItems.map((product) => (
+                    {shoppingCartItems.length === 0 && (showCart || isItDesktop) ? shoppingCartPlaceholder : (showCart || isItDesktop) ? shoppingCartItems.map((product) => (
                         <div className="shoppingCartItem__wrapper" key={product.id}>
                             <div className="shoppingCartItem__name">{product.title} ({product.quantity})</div>
                             <div className="shoppingCartItem__price">{(product.price * product.quantity).toFixed(2)}</div>
                         </div>
                     )) : null
                     }
-                    {itemsInCart === 0 && shoppingCartItems.length === 0 && (showCart || isItDesktop)  ? null: (showCart || isItDesktop) ?
+                    {shoppingCartItems.length === 0 && (showCart || isItDesktop)  ? null: (showCart || isItDesktop) ?
                         <div className="total__wrapper">
                             <div className="total__text">{totalText}</div>
                             <div className="total__price">{totalPrice.toFixed(2)}</div>
                         </div> : null
                 }
                 </div>
-                <div className={itemsInCart === 0 ? "shoppingCartPop__orderBtnInactive" :"shoppingCartPop__orderBtnActive"} id="shoppingCartPopOrderBtn" onClick={itemsInCart === 0 ? null :orderBtnClick}>{showCart || isItDesktop? orderBtnText : ""}</div>
+                <div className={shoppingCartItems.length === 0 ? "shoppingCartPop__orderBtnInactive" :"shoppingCartPop__orderBtnActive"} id="shoppingCartPopOrderBtn" onClick={itemsInCart === 0 ? null :orderBtnClick}>{showCart || isItDesktop? orderBtnText : ""}</div>
             </section>
         </div>
             </div>
