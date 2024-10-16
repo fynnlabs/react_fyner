@@ -49,6 +49,7 @@ export default function Navigation() {
         });
     }, []);
 
+
     const toggleNavigation = () => {
         setIsNavOpen((prev) => !prev);
     };
